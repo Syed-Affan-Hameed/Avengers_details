@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtLayoutHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tony Stark"
+        android:layout_marginLeft="15dp"
+        android:textSize="27sp"
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textColor="#ae3344"
+        android:layout_alignParentTop="true"/>
+
+    <ImageView
+        android:id="@+id/imgTonyStark"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_margin="30dp"
+        android:src="@drawable/tony_stark"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/txtTonyEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="tony@starkindustries.com"
+        android:textStyle="italic"
+        android:layout_gravity="center"
+        android:textSize="26sp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@id/txtLayoutHeader"/>
+    />
+    <TextView
+        android:id="@+id/txtPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="+91 11177555"
+        android:layout_gravity="center"
+        android:textSize="23sp"
+        android:textColor="#651fff"
+        android:layout_marginLeft="25dp"
+        android:layout_below="@id/txtTonyEmail"/>
+
+    <EditText
+        android:id="@+id/etUsertext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter the Text here"
+        android:textSize="20sp"
+        android:inputType="text"
+        android:layout_below="@id/imgTonyStark"
+        />
+    <Button
+        android:id="@+id/btnClkhere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/black"
+        android:layout_margin="20dp"
+        android:text="Click Here"
+        android:textColor="#ffffff"
+        android:layout_alignParentBottom="true"
+        />
+</RelativeLayout>
