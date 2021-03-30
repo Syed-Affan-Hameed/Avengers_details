@@ -31,12 +31,12 @@ class LoginActivity : AppCompatActivity() /*View.OnClickListener*/ {
         sharedpreferences =
             getSharedPreferences(getString(R.string.preferences_file_name), Context.MODE_PRIVATE)
         val isLoggedIn = sharedpreferences.getBoolean("isLoggedIn", false)
+        setContentView(R.layout.activity_login)
         if (isLoggedIn) {
             intent = Intent(this@LoginActivity, MainActivity::class.java)
             startActivity(intent)
-        } else {
-            setContentView(R.layout.activity_login)
-        }
+            finish()
+        } 
         title = "Login"
         etemail = findViewById(R.id.etemail)
         etpass = findViewById(R.id.etpass)
@@ -53,45 +53,52 @@ class LoginActivity : AppCompatActivity() /*View.OnClickListener*/ {
             if (user == useridphone) {
                 when (pass) {
                     password[0] -> {
-                        savepreferences()
+
                         avenger = "Iron Man"
-                        intent.putExtra("AvengerName", avenger)
+                        savepreferences(avenger )
+
                         startActivity(intent)
                     }
                     password[1] -> {
-                        savepreferences()
+
                         avenger = "Black Widow"
-                        intent.putExtra("AvengerName", avenger)
+                        savepreferences(avenger )
+
                         startActivity(intent)
                     }
                     password[2] -> {
-                        savepreferences()
+
                         avenger = "The Incredible Hulk (Strongest avenger;))"
-                        intent.putExtra("AvengerName", avenger)
+                        savepreferences(avenger )
+
                         startActivity(intent)
                     }
                     password[3] -> {
-                        savepreferences()
+
                         avenger = "THOR(Point Break)"
-                        intent.putExtra("AvengerName", avenger)
+                        savepreferences(avenger )
+
                         startActivity(intent)
                     }
                     password[4] -> {
-                        savepreferences()
+
                         avenger = "Black Panther"
-                        intent.putExtra("AvengerName", avenger)
+                        savepreferences(avenger )
+
                         startActivity(intent)
                     }
                     password[5] -> {
-                        savepreferences()
+
                         avenger = "Captain America"
-                        intent.putExtra("AvengerName", avenger)
+                        savepreferences(avenger)
+
                         startActivity(intent)
                     }
                     password[6] -> {
-                        savepreferences()
+
                         avenger = "Hawk Eye"
-                        intent.putExtra("AvengerName", avenger)
+                        savepreferences(avenger )
+
                         startActivity(intent)
                     }
                     else -> {
@@ -112,8 +119,9 @@ class LoginActivity : AppCompatActivity() /*View.OnClickListener*/ {
         finish()
     }
 
-    fun savepreferences() {
+    fun savepreferences(title :String) {
         sharedpreferences.edit().putBoolean("isLoggedIn", true).apply()
+        sharedpreferences.edit().putString("Title",title).apply()
     }
 
 }
